@@ -1,0 +1,288 @@
+%%%%%%%%%%%%%%%%%
+% This CV is based on the CV template created using altacv.cls
+% (v1.3, 10 May 2020) written by LianTze Lim (liantze@gmail.com), forked by Nicolás Omar González Passerino (nicolas.passerino@gmail.com) (v1.7.1b, 11 Jan 2024)
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+%% Fork (before v1.6.5a): CV dark mode toggle enabler to use a inverted color palette.
+%% Use the "darkmode" option if you want a color palette used to 
+% \documentclass[10pt,a4paper,ragged2e,withhyper,darkmode]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+%% AltaCV uses the fontawesome5 and academicons fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+%% Fork v1.6.5c: Overwriting sloppy environment to ignore any spaces and be used to solve overlapping cvtags
+\newenvironment{sloppypar*}{\sloppy\ignorespaces}{\par}
+
+% Change the page layout if you need to
+\geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Fork (before v1.6.5a): Change the color codes to test your personal variant on any mode
+\ifdarkmode%
+  \definecolor{PrimaryColor}{HTML}{C69749}
+  \definecolor{SecondaryColor}{HTML}{D49B54}
+  \definecolor{ThirdColor}{HTML}{1877E8}
+  \definecolor{BodyColor}{HTML}{ABABAB}
+  \definecolor{EmphasisColor}{HTML}{ABABAB}
+  \definecolor{BackgroundColor}{HTML}{191919}
+\else%
+  \definecolor{PrimaryColor}{HTML}{001F5A}
+  \definecolor{SecondaryColor}{HTML}{0039AC}
+  \definecolor{ThirdColor}{HTML}{F3890B}
+  \definecolor{BodyColor}{HTML}{666666}
+  \definecolor{EmphasisColor}{HTML}{2E2E2E}
+  \definecolor{BackgroundColor}{HTML}{E2E2E2}
+\fi%
+
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{SecondaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{EmphasisColor}
+\colorlet{body}{BodyColor}
+\pagecolor{BackgroundColor}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+%% \addbibresource{main.bib}
+
+\begin{document}
+    \name{Alexandros Antonov}
+    \tagline{Senior Software Engineer, Ph.D. Candidate}
+    %% You can add multiple photos on the left or right
+    \photoL{4cm}{Alexandros-Antonov}
+
+    \personalinfo{
+        \email{aantonov@hotmail.gr}\smallskip
+        \phone{+30}
+        \location{Athens, Greece}\\
+        \linkedin{Alex Antonov}
+        \github{AAlexandros}
+        %\homepage{nicolasomar.me}
+        %\medium{nicolasomar}
+        %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+        % \orcid{0000-0000-0000-0000}
+        %% You can add your own arbtrary detail with
+        %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+        % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+        %% Or you can declare your own field with
+        %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+        % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+        % \gitlab{your_id}
+    }
+    
+    \makecvheader
+    %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+    % \AtBeginEnvironment{itemize}{\small}
+    
+    %% Set the left/right column width ratio to 6:4.
+    \columnratio{0.25}
+
+    % Start a 2-column paracol. Both the left and right columns will automatically
+    % break across pages if things get too long.
+    \begin{paracol}{2}
+        % ----- TECH STACK -----
+        \cvsection{TECH STACK}
+            %% Fork v1.6.5c: The sloppypar* environment is used to avoid tags overlapping with section width
+            \begin{sloppypar*}
+                %% Fork 1.7.1b: Now in case you want to highlight any tag, just add a '/true' property next to its text and it will change tag's text and border colors.
+                \cvtags{Java, Python, Groovy, C++, C, C\#, Solidity, javascript, Bash\slash PowerShell Scripts, HTML, CSS}
+                \medskip
+
+                \cvtags{MySQL, PostgreSQL, MongoDB, Git, SVN, Gradle, Maven}
+                \medskip
+
+                \cvtags{React.js, web3.js, Angular, Apache Wicket, REST\slash SOAP Web Services, IBM API Connect, Microsoft Azure, Websphere Application Server, Apache Tomcat}
+                \medskip
+
+                \cvtags{Truffle Suite, Apache Camel, Jira, Linux, Apache Hadoop, Apache Spark, gnuplot}
+                \medskip               
+            \end{sloppypar*}
+        % ----- TECH STACK -----
+        
+        % ----- LEARNING -----
+        \cvsection{Other Skills}
+            \begin{sloppypar*}
+                \cvtags{Teamwork, Time Management, Problem Solving, Multitasking, Training, Critical Thinking, Presenting, Attention to Detail, Certified Scrum Master (PSM I)}
+            \end{sloppypar*}
+        % ----- LEARNING -----
+
+        % ----- Certificates -----
+        \cvsection{Languages}
+            \cvlang{English}{Proficiency Certificate (C2)}\\
+            \divider
+
+            \cvlang{Greek}{Native Speaker}\\
+            \divider
+
+            \cvlang{Russian}{Native Speaker}
+            \bigskip
+        % ----- Certificates -----
+            
+        % ----- REFERENCES -----
+        % \cvsection{References}
+        %     \cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
+        %     \divider
+
+        %     \cvref{Boss\ Gamma Delta}{Business}{g.delta@business.com}
+        % ----- REFERENCES -----
+        
+        % ----- MOST PROUD -----
+        % \cvsection{Most Proud of}
+        
+        % \cvachievement{\faTrophy}{Fantastic Achievement}{and some details about it}\\
+        % \divider
+        % \cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}\\
+        % \divider
+        % \cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
+        % ----- MOST PROUD -----
+        
+        % \cvsection{A Day of My Life}
+        
+        % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+        % \wheelchart{outer radius}{inner radius}{
+        % comma-separated list of value/text width/color/detail}
+        % \wheelchart{1.5cm}{0.5cm}{%
+        %   6/8em/accent!30/{Sleep,\\beautiful sleep},
+        %   3/8em/accent!40/Hopeful novelist by night,
+        %   8/8em/accent!60/Daytime job,
+        %   2/10em/accent/Sports and relaxation,
+        %   5/6em/accent!20/Spending time with family
+        % }
+        
+        % use ONLY \newpage if you want to force a page break for
+        % ONLY the current column
+        \newpage
+        
+        %% Switch to the right column. This will now automatically move to the second
+        %% page if the content is too long.
+        \switchcolumn
+        
+        % ----- ABOUT ME -----
+        \cvsection{About Me}
+            \begin{quote}
+            During my 7 years of work in Industry and Academia, I’ve cultivated a dual passion: crafting well designed, thoroughly tested, and properly implemented large-scale systems while conducting profound evaluations and comparisons with the state of the art, pushing the boundaries of innovation.  
+            \end{quote}
+        % ----- ABOUT ME -----
+        
+        % ----- EXPERIENCE -----
+        \cvsection{Experience}
+            \cvevent{Software Engineer}{Interamerican | Digital Solutions Department}{2016--2020}{Athens, Greece}
+            \begin{itemize}
+                \item System Modeling (Problem Analysis, Usecase/Function Flow Diagrams, Architecture Design).
+                \item Implementation (Back-End/UI Development, Database Management).
+                \item Test Driven Development (Unit/End-to-End/Regression/Integration Testing).
+                \item Communication with key stakeholders to develop optimal solutions based on client needs.
+                \item Operating in a self-organized team, managing task estimations, and fulfilling Scrum Master duties within agile methodologies.
+                \item Conducting R\&D for technologies that meet department needs.
+                \item Training and mentoring new team members.
+            \end{itemize}
+            
+        % ----- EXPERIENCE -----
+        
+        % ----- EDUCATION -----
+        \cvsection{Education}
+            \cvevent{Ph.D. Candidate in Computer Science}{Athens University of Economics and Business}{2021 -- Ongoing}{Athens, Greece}
+            \begin{itemize}
+                \item[] Thesis: Dependable Network Overlays for Blockchain Systems
+                \item[] Fields: Blockchains, Peer-to-Peer Networks, Distributed Systems
+            \end{itemize}
+            \divider
+            
+            \cvevent{M.Sc. in Computer Science}{Athens University of Economics and Business}{2020-2021}{Athens, Greece}
+            \begin{itemize}
+                \item[] GPA: 9.33
+            \end{itemize}
+            \divider
+
+            \cvevent{B.Sc. in Computer Science}{Athens University of Economics and Business}{2011-2016}{Athens, Greece}
+            \begin{itemize}
+                \item[] Specializations: Information Systems and Security, Computer Systems and Networks
+                \item[] GPA: 7.1
+            \end{itemize}
+        % ----- EDUCATION -----
+
+        \hfill
+
+        % ----- Publications -----
+        \cvsection{Publications}
+            \cveventSecond{SecureCyclon: Dependable Peer Sampling}{ICDCS 2023}
+            \begin{itemize}
+                \item[] Establishes a mechanism for sampling a set of pseudo-random peers in a P2P overlay, designed to withstand malicious actions. Funded by IOHK, the company behind the \textbf{Cardano} blockchain.
+            \end{itemize}
+            \divider
+        % ----- Publications -----
+        
+        % ----- PROJECTS -----
+        \cvsection{Projects}
+            \cveventSecond{Crypto Games}{\cvreference{\faGithub}{https://github.com/AAlexandros/crypto-dice}{}}
+            \begin{itemize}
+                \item[] Developed two blockchain-based games: the popular SOS game with a focus on user experience, and a simple dice game designed to counteract malicious behavior. Both games are comprised of a Solidity smart contract and a React-based web interface, integrated using web3.js.
+            \end{itemize}
+            \divider
+
+            \cveventSecond{Bloom Filter-Based Multicast for Information Centric Networks}{\cvreference{\faGlobe}{https://cordis.europa.eu/project/id/643990}{}}
+            \begin{itemize}
+                \item[] Implemented a prototype infrastructure utilizing the \emph{Publish/Subscribe paradigm} to offer an alternative to network-layer multicast. Developed within the European project \textbf{``Point: iP Over IcN – the betTer ip''}.
+            \end{itemize}
+            \divider
+
+            \cveventThird{Social Network Recommendation}{{}}
+            \begin{itemize}
+                \item[] Analyzed a real social network dataset to optimize item recommendations. Explored network diffusion to maximize the weighted sum of item outreach and average user ratings.
+            \end{itemize}
+        % ----- PROJECTS -----
+    \end{paracol}
+\end{document}
