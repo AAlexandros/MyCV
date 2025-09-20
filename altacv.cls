@@ -326,6 +326,13 @@
   \medskip\normalsize
 }
 
+\newcommand{\cveducation}[5]{%
+  \textbf{#1}%
+  \ifstrequal{#2}{}{}{ \, | \, #2}%
+  \ifstrequal{#5}{}{}{ \, | \, GPA: #5}%
+  \hfill {\small #3, #4}\par
+}
+
 \newcommand{\cveventSecond}[2]{%
   {\large\color{emphasis}#1}
   \smallskip\normalsize
