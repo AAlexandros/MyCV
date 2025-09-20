@@ -326,11 +326,29 @@
   \medskip\normalsize
 }
 
-\newcommand{\cveducation}[5]{%
+\newcommand{\cveducation}[6]{%
+  % --- First line (always) ---
   \textbf{#1}%
-  \ifstrequal{#2}{}{}{ \, | \, #2}%
-  \ifstrequal{#5}{}{}{ \, | \, GPA: #5}%
-  \hfill {\small #3, #4}\par
+  \ifstrequal{#2}{}{}{ \,|\, #2}%
+  \ifstrequal{#6}{}{}{ \,|\, #6}%
+  \ifstrequal{#5}{}%
+    {%
+      % No GPA -> put date/location at right, same line
+      \hfill {\small \textcolor{accent}{\cvDateMarker}~#3 \enskip
+                   \textcolor{accent}{\cvLocationMarker}~#4}\par
+    }%
+    {%
+      % With GPA -> break line
+      \par
+      % GPA left, date/location right
+      \noindent
+      \makebox[\linewidth]{%
+        {\small GPA:~#5}%
+        \hfill
+        {\small \textcolor{accent}{\cvDateMarker}~#3 \enskip
+                \textcolor{accent}{\cvLocationMarker}~#4}%
+      }\par
+    }%
 }
 
 \newcommand{\cveventSecond}[2]{%
