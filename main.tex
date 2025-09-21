@@ -98,32 +98,53 @@
 %% sample.bib contains your publications
 %% \addbibresource{main.bib}
 
-\begin{document}
-    \name{Alexandros Antonov}
-    \tagline{Senior Software Engineer, Ph.D. Candidate}
-    %% You can add multiple photos on the left or right
-    \photoL{4cm}{Alexandros-Antonov}
+%%%%%%%%%%%%%%%%%%%%%%
+% PERSONAL INFORMATION
+%%%%%%%%%%%%%%%%%%%%%%
+\name{Alexandros Antonov}
+\tagline{Senior Software Engineer, Ph.D. Candidate}
+\personalinfo{
+  \email{aantonov@hotmail.gr}\smallskip
+  \location{Athens, Greece}\\
+  \linkedin{alex-antonov-96a250105}
+  \github{AAlexandros}
+}
 
-    \personalinfo{
-        \email{aantonov@hotmail.gr}\smallskip
-        \phone{+30}
-        \location{Athens, Greece}\\
-        \linkedin{alex-antonov-96a250105}
-        \github{AAlexandros}
-        %\homepage{nicolasomar.me}
-        %\medium{nicolasomar}
-        %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
-        % \orcid{0000-0000-0000-0000}
-        %% You can add your own arbtrary detail with
-        %% \printinfo{symbol}{detail}[optional hyperlink prefix]
-        % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
-        %% Or you can declare your own field with
-        %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
-        % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
-        % \gitlab{your_id}
-    }
-    
-    \makecvheader
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% ABOUT ME MACRO + HEADER
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% User-facing About Me command
+\newcommand{\aboutme}[1]{\def\aboutmetext{#1}}
+
+\makeatletter
+\renewcommand{\makecvheader}{%
+  \begin{paracol}{2}
+    % --- LEFT COLUMN ---
+    \raggedright
+    {\LARGE\bfseries\color{name}\MakeUppercase{\@name}\par}
+    \medskip
+    {\large\color{tagline}\@tagline\par}
+    \medskip
+    {\small\@personalinfo\par}
+
+    % --- RIGHT COLUMN ---
+    \switchcolumn
+    \raggedright
+    \begin{tcolorbox}[colback=accent!5,colframe=accent!80!black,
+                      boxrule=0.5pt,arc=2mm,left=2mm,right=2mm,top=1mm,bottom=1mm]
+      \small \aboutmetext
+    \end{tcolorbox}
+  \end{paracol}
+  \medskip
+}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\aboutme{Software engineer and Ph.D. candidate with 8+ years of experience building scalable, reliable systems.
+Passionate about applying research-driven innovation to deliver robust and practical solutions.}
+\makecvheader
     %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
     % \AtBeginEnvironment{itemize}{\small}
     
@@ -135,40 +156,36 @@
     \begin{paracol}{2}
         % ----- TECH STACK -----
         \cvsection{TECH STACK}
-            %% Fork v1.6.5c: The sloppypar* environment is used to avoid tags overlapping with section width
             \begin{sloppypar*}
-                %% Fork 1.7.1b: Now in case you want to highlight any tag, just add a '/true' property next to its text and it will change tag's text and border colors.
-                \cvtags{Java, Python, Groovy, C++, C, C\#, Solidity, javascript, Bash\slash PowerShell Scripts, HTML, CSS}
+                \cvtags{Python, Java, C\#, C++, Groovy, Bash/PowerShell}
                 \medskip
 
-                \cvtags{MySQL, PostgreSQL, MongoDB, Git, SVN, Gradle, Maven}
+                \cvtags{Flask, SQLAlchemy, Pydantic, REST APIs, Hibernate}
                 \medskip
 
-                \cvtags{React.js, web3.js, Angular, Apache Wicket, REST\slash SOAP Web Services, IBM API Connect, Microsoft Azure, Websphere Application Server, Apache Tomcat}
+                \cvtags{PostgreSQL, MySQL, MongoDB}
                 \medskip
 
-                \cvtags{Truffle Suite, Apache Camel, Jira, Linux, Apache Hadoop, Apache Spark, gnuplot}
-                \medskip               
+                \cvtags{Docker, GitHub Actions CI\slash CD, Microsoft Azure, Linux, WebSphere}
+                \medskip
+
+                \cvtags{React.js, Angular, HTML, CSS, JavaScript}
+                \medskip
             \end{sloppypar*}
         % ----- TECH STACK -----
         
         % ----- LEARNING -----
         \cvsection{Other Skills}
             \begin{sloppypar*}
-                \cvtags{Certified Scrum Master (PSM I), Teamwork, Time Management, Problem Solving, Multitasking, Training, Critical Thinking, Presenting, Attention to Detail}
+                \cvtags{Certified Scrum Master (PSM I), Teamwork, Problem Solving, Mentoring, Presenting, Attention to Detail}
             \end{sloppypar*}
         % ----- LEARNING -----
 
         % ----- Certificates -----
         \cvsection{Languages}
-            \cvlang{English}{Proficiency Certificate (C2)}\\
-            \divider
-
-            \cvlang{Greek}{Native Speaker}\\
-            \divider
-
-            \cvlang{Russian}{Native Speaker}
-            \bigskip
+        \cvlang{English}{Proficiency Cert. (C2)}
+        \cvlang{Greek}{Native Speaker}
+        \cvlang{Russian}{Native Speaker}
         % ----- Certificates -----
             
         % ----- REFERENCES -----
@@ -210,24 +227,26 @@
         %% page if the content is too long.
         \switchcolumn
         
-        % ----- ABOUT ME -----
-        \cvsection{About Me}
-            \begin{quote}
-            During my 7 years of work in Industry and Academia, I’ve cultivated a dual passion: crafting well designed, thoroughly tested, and properly implemented large-scale systems while conducting profound evaluations and comparisons with the state of the art, pushing the boundaries of innovation.  
-            \end{quote}
-        % ----- ABOUT ME -----
-        
         % ----- EXPERIENCE -----
         \cvsection{Experience}
-            \cvevent{Software Engineer}{Interamerican | Digital Solutions Department}{2016--2020}{Athens, Greece}
+            \cvevent{Software Engineer}{Interamerican - Digital Solutions Department}{2016--2020}{Athens, Greece}
             \begin{itemize}
-                \item System Modeling (Problem Analysis, Usecase/Function Flow Diagrams, Architecture Design).
-                \item Implementation (Back-End/UI Development, Database Management).
-                \item Test Driven Development (Unit/End-to-End/Regression/Integration Testing).
-                \item Communication with key stakeholders to develop optimal solutions based on client needs.
-                \item Operating in a self-organized team, managing task estimations, and fulfilling Scrum Master duties within agile methodologies.
-                \item Conducting R\&D for technologies that meet department needs.
-                \item Training and mentoring new team members.
+                \item Developed and maintained the company’s customer-facing web portal (Java, Apache Wicket, Angular, Hibernate, Oracle), serving up to 1.5M+ insured clients.
+                \item Acted as the integration bridge between the frontend portal and numerous enterprise systems (CRM, payment gateways, legacy insurance platforms, healthcare back-office), ensuring seamless data exchange and customer transactions.
+                \item Designed and consumed REST APIs to enable features such as online claims submission, policy management, and digital payments, expanding customer self-service capabilities.
+                \item Collaborated in a 6-person agile team (4 devs, PO, BA) and fulfilled occasional Scrum Master duties to streamline delivery.
+                \item Mentored and onboarded 4 junior engineers through pair-programming, code reviews, and knowledge-sharing sessions, accelerating team ramp-up and code quality.
+                \item Conducted R\&D on new technologies to align with evolving departmental needs.
+            \end{itemize}
+
+            \cvevent{Lead Developer}{KMicro - AI GRC Platform}{2024-Present}{Costa Mesa, CA (Remote)}
+            \begin{itemize}
+                \item Co-led development of an AI-driven platform that generates and revises security policies, answers questionnaires, and performs compliance assessments — reducing manual research for security teams.
+                \item Designed and deployed the system architecture and infrastructure (Flask backend, SQLAlchemy, Azure App Service, Docker, CI/CD with GitHub Actions).
+                \item Implemented Secure Controls Framework (SCF) integration, loading thousands of controls into memory for real-time mapping across NIST, ISO, and other frameworks — the core engine of the platform.
+                \item Adapted and deployed a customized version of Prowler (open-source security tool) to Azure, extending functionality to meet enterprise compliance needs.
+                \item Improved system performance through ORM optimizations and efficient AI logic design, reducing excessive database calls and ensuring scalability.
+                \item Served as go-to technical lead, trusted to make architectural decisions and mentor teammates, while also managing DevOps deployments.
             \end{itemize}
             
         % ----- EXPERIENCE -----

@@ -381,15 +381,16 @@
   }
 }
 
-% Fork (before v1.6.5a): Tags now have a more consistent vertican and horizontal separation
-% Fork v1.7.1b: cvtag now includes a boolean flag to highlight its text and border among other of its type
 \newcommand{\cvtag}[2]{%
-  \ifthenelse{\equal{#2}{true}}{%
-    \tikz[baseline]\node[anchor=base,draw=accent,rounded corners,inner xsep=1ex,inner ysep=0.8ex,text height=1.5ex,text depth=.25ex]{\markword{#1}};
-  }{%
-    \tikz[baseline]\node[anchor=base,draw=body,rounded corners,inner xsep=1ex,inner ysep=0.8ex,text height=1.5ex,text depth=.25ex]{#1};
-  }
-  \vspace{0.27ex}
+  \tikz[baseline]{\node[
+    anchor=base,
+    draw=body,
+    rounded corners,
+    inner xsep=0.5ex,
+    inner ysep=0.6ex,
+    text height=1.2ex,
+    text depth=0.1ex
+  ]{#1};}%
 }
 
 % v1.6: Use accsupp so that the actual numeric value is copied/pasted
@@ -405,10 +406,17 @@
   }\EndAccSupp{}\par%
 }
 
-% Fork (before v1.6.5a): Tag added for languages rating, avoiding star/button/progress bar previous ideas, I made a simpler and more accurate representation using a single string, which will be colored to be oustanding
 \newcommand{\cvlang}[2]{%
-    \textcolor{emphasis}{\textbf{#1: }}
-    \textcolor{accent}{\textbf{#2}}
+  \tikz[baseline]{\node[
+    anchor=base,
+    draw=accent,
+    rounded corners,
+    inner xsep=0.5ex,
+    inner ysep=0.6ex,
+    text height=1.2ex,
+    text depth=0.1ex,
+    text=accent
+  ]{\textbf{#1}: #2};}
 }
 
 % Adapted from @Jake's answer at http://tex.stackexchange.com/a/82729/226
