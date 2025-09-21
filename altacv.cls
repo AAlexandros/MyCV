@@ -265,7 +265,6 @@
 
 \newcommand{\makecvheader}{%
   \begingroup
-    \altacv@left@photos\hfill%
     \begin{minipage}{\dimexpr\linewidth-\altacv@photos@width}%
     \raggedright%
     {\namefont\color{name}\MakeUppercase{\@name}\par}
