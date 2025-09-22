@@ -329,7 +329,7 @@
   % --- First line (always) ---
   \textbf{#1}%
   \ifstrequal{#2}{}{}{ \,|\, #2}%
-  \ifstrequal{#6}{}{}{ \,|\, #6}%
+  \ifstrequal{#6}{}{}{ \\ \emph{#6}}%
   \ifstrequal{#5}{}%
     {%
       % No GPA -> put date/location at right, same line

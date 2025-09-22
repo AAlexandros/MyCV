@@ -181,12 +181,24 @@ Passionate about applying research-driven innovation to deliver robust and pract
             \end{sloppypar*}
         % ----- LEARNING -----
 
-        % ----- Certificates -----
+        % ----- Languages -----
         \cvsection{Languages}
         \cvlang{English}{Proficiency Cert. (C2)}
         \cvlang{Greek}{Native Speaker}
         \cvlang{Russian}{Native Speaker}
-        % ----- Certificates -----
+        % ----- Languages -----
+
+        % ----- PROJECTS -----
+    \cvsection{Projects}
+    \begin{itemize}[leftmargin=1em,itemsep=0.3em,topsep=0pt]
+      \item \textbf{Crypto Games}\cvreference{\faGithub}{https://github.com/AAlexandros}:
+            Two blockchain-based games (Solidity + React/web3.js).
+      \item \textbf{Bloom Filter-Based Multicast\cvreference{\faGithub}{https://github.com/AAlexandros}}:
+            Prototype ICN \emph{Publish/Subscribe} infrastructure developed as part of EU project \textbf{POINT}.
+      \item \textbf{Social Network Recommendation}:
+            Dataset analysis to optimize item diffusion/recommendations.
+    \end{itemize}
+        % ----- PROJECTS -----
             
         % ----- REFERENCES -----
         % \cvsection{References}
@@ -239,10 +251,12 @@ Passionate about applying research-driven innovation to deliver robust and pract
                 \item Conducted R\&D on new technologies to align with evolving departmental needs.
             \end{itemize}
 
+            \divider
+
             \cvevent{Lead Developer}{KMicro - AI GRC Platform}{2024-Present}{Costa Mesa, CA (Remote)}
             \begin{itemize}
                 \item Co-led development of an AI-driven platform that generates and revises security policies, answers questionnaires, and performs compliance assessments — reducing manual research for security teams.
-                \item Designed and deployed the system architecture and infrastructure (Flask backend, SQLAlchemy, Azure App Service, Docker, CI/CD with GitHub Actions).
+                \item Designed and deployed the system architecture and infrastructure (Flask backend, SQLAlchemy, Azure Infrastructure, Docker, CI/CD with GitHub Actions).
                 \item Implemented Secure Controls Framework (SCF) integration, loading thousands of controls into memory for real-time mapping across NIST, ISO, and other frameworks — the core engine of the platform.
                 \item Adapted and deployed a customized version of Prowler (open-source security tool) to Azure, extending functionality to meet enterprise compliance needs.
                 \item Improved system performance through ORM optimizations and efficient AI logic design, reducing excessive database calls and ensuring scalability.
@@ -250,7 +264,17 @@ Passionate about applying research-driven innovation to deliver robust and pract
             \end{itemize}
             
         % ----- EXPERIENCE -----
-        
+
+        % ----- Publications -----
+        \cvsection{Publications}
+
+        \textbf{SecureCyclon: Dependable Peer Sampling}, ICDCS 2023 —
+        Resilient peer-sampling mechanism (funded by \textbf{Cardano}). \\[0.5em]
+
+        \textbf{CliqueSensus: Ephemeral Overlays for Committee-based PoS Blockchains}, Middleware 2025 —
+        Efficient consensus messaging protocol (supported by \textbf{Ethereum Foundation}).
+        % ----- Publications -----
+
         % ----- EDUCATION -----
         \cvsection{Education}
 
@@ -260,7 +284,7 @@ Passionate about applying research-driven innovation to deliver robust and pract
           {2021 -- Ongoing}
           {Athens, Greece}
           {}
-          {Dependable Overlays for Blockchains}
+          {Title: Dependable Overlays for Blockchains}
 
         \cveducation
           {M.Sc. in Computer Science}
@@ -279,40 +303,5 @@ Passionate about applying research-driven innovation to deliver robust and pract
           {}
         % ----- EDUCATION -----
 
-        \hfill
-
-        % ----- Publications -----
-        \cvsection{Publications}
-            \cveventSecond{SecureCyclon: Dependable Peer Sampling}{ICDCS 2023}
-            \begin{itemize}
-                \item[] Establishes a mechanism for sampling a set of pseudo-random peers in a P2P overlay, designed to withstand malicious actions. Funded by IOHK, the company behind the \textbf{Cardano} blockchain.
-            \end{itemize}
-            \divider
-
-            \cveventSecond{CliqueSensus: Ephemeral Overlays for Committee-based PoS Blockchains} {Middleware 2025}
-            \begin{itemize}
-                \item[] Proposes a protocol for efficient message exchange among consensus nodes through clique structures. Supported by funding from the \textbf{Ethereum Foundation}.
-            \end{itemize}
-        % ----- Publications -----
-        
-        % ----- PROJECTS -----
-        \cvsection{Projects}
-            \cveventSecond{Crypto Games}{\cvreference{\faGithub}{https://github.com/AAlexandros}}
-            \begin{itemize}
-                \item[] Developed two blockchain-based games: the popular SOS game with a focus on user experience, and a simple dice game designed to counteract malicious behavior. Both games are comprised of a Solidity smart contract and a React-based web interface, integrated using web3.js.
-            \end{itemize}
-            \divider
-
-            \cveventSecond{Bloom Filter-Based Multicast for Information Centric Networks}{\cvreference{\faGithub}{https://github.com/AAlexandros}}
-            \begin{itemize}
-                \item[] Implemented a prototype infrastructure utilizing the \emph{Publish/Subscribe paradigm} to offer an alternative to network-layer multicast. Developed within the European project \textbf{``Point: iP Over IcN – the betTer ip''}.
-            \end{itemize}
-            \divider
-
-            \cveventThird{Social Network Recommendation}{{}}
-            \begin{itemize}
-                \item[] Analyzed a real social network dataset to optimize item recommendations. Explored network diffusion to maximize the weighted sum of item outreach and average user ratings.
-            \end{itemize}
-        % ----- PROJECTS -----
     \end{paracol}
 \end{document}
